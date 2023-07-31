@@ -1,0 +1,38 @@
+
+<html>
+<style>
+  #logo-site {
+    width: 250px;
+    transition: width 0.5s ease;
+  }
+  .scrolled {
+    width: 150px !important;
+  }
+ @media (max-width: 900px) {
+ #logo-site {
+
+    transition:initial;
+  }
+  .scrolled {
+    width: initial !important;
+  }
+}
+</style> 
+<body style="background-color: rgba(0, 0, 0, 0.504);"> 
+<img id="logo-site" src="/cr7.png">
+<div style="height: 100vh"></div>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var logo = document.getElementById("logo-site");
+
+    window.addEventListener("scroll", function() {
+      if (window.pageYOffset > 0) {
+        logo.classList.add("scrolled");
+      } else {
+        logo.classList.remove("scrolled");
+      }
+    });
+  });
+</script>
+</html>
